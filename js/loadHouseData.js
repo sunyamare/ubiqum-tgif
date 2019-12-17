@@ -21,7 +21,7 @@ const middleNameArray = generateValueArray("middle_name");
 const lastNameArray = generateValueArray("last_name");
 const fullNameArray = [];
 for (let n = 0; n < masterArrayLength; n++) {
-    if (middleNameArray[n] === null) {
+    if (middleNameArray[n] === "null") {
         fullNameArray.push(firstNameArray[n] + " " + lastNameArray[n]);
     } else {
         fullNameArray.push(
@@ -52,3 +52,26 @@ const votesWithPartyPercentageArray = generateValueArray(
 console.log(votesWithPartyPercentageArray);
 
 // building the table
+let table = document.getElementById("house-data");
+
+let tableContent = document.createElement("tr");
+table.appendChild(tableContent);
+
+/* 
+<table>
+    <tr>
+        <th>Full Name</th>
+        <th>Party</th>
+        <th>State</th>
+        <th>Seniority</th>
+        <th>Votes With Party</th>
+    </tr>
+    <tr>
+        <td>Jill</td>
+        <td>Smith</td>
+        <td>50</td>
+        <td>50</td>
+        <td>50</td>
+    </tr>
+</table>
+*/

@@ -5,9 +5,37 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <title>House Data</title>
+        <link rel="stylesheet" href="./css/style.css" />
     </head>
     <body>
-        <table id="house-data"></table>
+        <header>
+            <h1>House Data</h1>
+            <p>
+                Source:
+                <a
+                    href="https://projects.propublica.org/api-docs/congress-api/"
+                    target="_blank"
+                    rel="noopener"
+                    >ProPublica Congress API</a
+                >
+            </p>
+        </header>
+        <section><table id="house-data"></table></section>
+
+        <footer>
+            <div class="site-notice">
+                <span>
+                    Site notice: This is a demo page! Contact:
+                    <a
+                        href="https://sunyamare.ch/"
+                        target="_blank"
+                        rel="noopener"
+                        >sunyamare.ch</a
+                    >
+                </span>
+            </div>
+        </footer>
+
         <script src="./js/membersHouse113Congress.js"></script>
         <script src="./js/loadHouseData.js"></script>
     </body>
