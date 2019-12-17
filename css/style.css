@@ -3,39 +3,20 @@ html {
 }
 body {
     font-family: Arial, sans-serif;
-    color: #2c2c2c;
     font-size: 18px;
-    margin: 0 auto;
+    margin: auto;
     max-width: 800px;
     padding: 1em;
     text-align: left;
 }
-h1,
-h2,
-h3 {
-    line-height: 1.2;
-}
-a {
-    color: #07a;
-}
-a:visited {
-    color: #941352;
-}
-
-.main-container {
-    margin-bottom: 20px;
-}
 
 table {
-    border-collapse: collapse;
     border-spacing: 0;
     width: 100%;
     border: 1px solid #ddd;
-    overflow-x: auto;
 }
 th,
 td {
-    text-align: left;
     padding: 2px 5px;
 }
 tr:nth-child(even) {
@@ -57,6 +38,7 @@ tr:nth-child(even) {
 }
 .top-button a:hover {
     text-decoration: underline;
+    color: #fff;
 }
 
 footer {
@@ -71,10 +53,6 @@ footer span {
     font-size: 14px;
     line-height: 2.2;
     font-style: italic;
-}
-.site-notice {
-    margin: 0;
-    width: fit-content;
 }
 
 @media screen and (min-width: 500px) {
