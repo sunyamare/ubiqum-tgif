@@ -1,16 +1,21 @@
-/* document.getElementById("house-data").innerHTML = JSON.stringify(data, null, 2); */
-/* data["results"][0]["members"][0]["first_name"]; // Alma
-data.results[0].members[0].first_name; // Alma -> harder to work with in a loop with parameters
-data.results[0].members["length"]; // 450 */
+// enter relevant data
+const tableHeadingArray = [
+    "Full Name",
+    "Party",
+    "State",
+    "Seniority",
+    "Votes With Party"
+];
+const dataToRetreive = data["results"][0]["members"];
 
 // the length of all ensuing arrays
-const masterArrayLength = data.results[0].members["length"];
+const masterArrayLength = dataToRetreive.length;
 
 // the function that generates arrays for each properties of interest
 const generateValueArray = (value, unitOfMeasure = "") => {
     let array = [];
     for (let n = 0; n < masterArrayLength; n++) {
-        array.push(data["results"][0]["members"][n][value] + unitOfMeasure);
+        array.push(dataToRetreive[n][value] + unitOfMeasure);
     }
     return array;
 };
@@ -33,45 +38,45 @@ for (let n = 0; n < masterArrayLength; n++) {
         );
     }
 }
-console.log(fullNameArray);
 
 // all other properties of interest
 const partyArray = generateValueArray("party");
-console.log(partyArray);
-
 const stateArray = generateValueArray("state");
-console.log(stateArray);
-
 const seniorityArray = generateValueArray("seniority");
-console.log(seniorityArray);
-
 const votesWithPartyPercentageArray = generateValueArray(
     "votes_with_party_pct",
     "%"
 );
-console.log(votesWithPartyPercentageArray);
 
-// building the table
+// existing table with ID
 let table = document.getElementById("house-data");
 
-let tableContent = document.createElement("tr");
-table.appendChild(tableContent);
+// generate table headings
+let tableHead = document.createElement("tr");
+for (let i = 0; i < tableHeadingArray.length; i++) {
+    let newTh = document.createElement("th");
+    newTh.appendChild(document.createTextNode(tableHeadingArray[i]));
+    tableHead.appendChild(newTh);
+}
+table.appendChild(tableHead);
 
-/* 
-<table>
-    <tr>
-        <th>Full Name</th>
-        <th>Party</th>
-        <th>State</th>
-        <th>Seniority</th>
-        <th>Votes With Party</th>
-    </tr>
-    <tr>
-        <td>Jill</td>
-        <td>Smith</td>
-        <td>50</td>
-        <td>50</td>
-        <td>50</td>
-    </tr>
-</table>
-*/
+// generate table contents
+for (let i = 0; i < masterArrayLength; i++) {
+    let tableContents = document.createElement("tr");
+    const addContentFromArray = array => {
+        let newTh = document.createElement("td");
+        newTh.appendChild(document.createTextNode(array[i]));
+        tableContents.appendChild(newTh);
+    };
+    addContentFromArray(fullNameArray);
+    addContentFromArray(partyArray);
+    addContentFromArray(stateArray);
+    addContentFromArray(seniorityArray);
+    addContentFromArray(votesWithPartyPercentageArray);
+    table.appendChild(tableContents);
+}
+
+// add total rows info
+let totalInfo = document.querySelector(".total-info");
+let totalInfoText = document.createTextNode("Total rows: " + masterArrayLength);
+totalInfo.appendChild(totalInfoText);

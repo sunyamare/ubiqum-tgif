@@ -9,7 +9,7 @@
     </head>
     <body>
         <header>
-            <h1>House Data</h1>
+            <h1 id="top">House Data</h1>
             <p>
                 Source:
                 <a
@@ -20,18 +20,26 @@
                 >
             </p>
         </header>
-        <section><table id="house-data"></table></section>
+
+        <section class="main-container">
+            <table id="house-data"></table>
+            <p class="total-info"></p>
+        </section>
+
+        <div class="top-button">
+            <a href="#top">Top</a>
+        </div>
 
         <footer>
             <div class="site-notice">
-                <span>
-                    Site notice: This is a demo page! Contact:
+                <span
+                    >Site notice: This is a demo page! Contact:
                     <a
                         href="https://sunyamare.ch/"
                         target="_blank"
                         rel="noopener"
-                        >sunyamare.ch</a
-                    >
+                        >sunyamare.ch
+                    </a>
                 </span>
             </div>
         </footer>
