@@ -1,6 +1,9 @@
 # macOS
 .DS_Store
 
+# API key file
+.key
+
 # Logs
 logs
 *.log
