@@ -48,8 +48,9 @@ const votesWithPartyPercentageArray = generateValueArray(
     "%"
 );
 
-// existing table with ID
-let table = document.getElementById("house-data");
+// existing table with IDs
+let thead = document.getElementById("house-head");
+let tbody = document.getElementById("house-body");
 
 // generate table headings
 let tableHead = document.createElement("tr");
@@ -58,7 +59,7 @@ for (let i = 0; i < tableHeadingArray.length; i++) {
     newTh.appendChild(document.createTextNode(tableHeadingArray[i]));
     tableHead.appendChild(newTh);
 }
-table.appendChild(tableHead);
+thead.appendChild(tableHead);
 
 // generate table contents
 for (let i = 0; i < masterArrayLength; i++) {
@@ -73,7 +74,7 @@ for (let i = 0; i < masterArrayLength; i++) {
     addContentFromArray(stateArray);
     addContentFromArray(seniorityArray);
     addContentFromArray(votesWithPartyPercentageArray);
-    table.appendChild(tableContents);
+    tbody.appendChild(tableContents);
 }
 
 // add total rows info

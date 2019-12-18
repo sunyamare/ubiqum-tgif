@@ -5,47 +5,159 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <title>House Data</title>
-        <link
-            rel="stylesheet"
-            href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-            crossorigin="anonymous"
-        />
+        <link rel="stylesheet" href="./css/bootstrap.min.css" />
         <link rel="stylesheet" href="./css/style.css" />
     </head>
     <body>
-        <header>
-            <h1 id="top">House Data</h1>
-            <p>
-                Source:
-                <a
-                    href="https://projects.propublica.org/api-docs/congress-api/"
-                    target="_blank"
-                    rel="noopener"
-                    >ProPublica Congress API</a
-                >
-            </p>
+        <header class="container-fluid">
+            <div class="row">
+                <div class="col">
+                    <img
+                        src="./img/tgif_logo.png"
+                        alt="TGIF Logo"
+                        class="tgifLogo float-left"
+                    />
+                    <h1 id="top">TGIF</h1>
+                </div>
+                <div class="col">
+                    <div class="email float-right p-1">
+                        <a href="mailto:info@tgif.net"
+                            ><img
+                                src="./img/mail.svg"
+                                alt="mail icon"
+                                class="emailImage"
+                            />info@tgif.net</a
+                        >
+                    </div>
+                </div>
+            </div>
         </header>
 
-        <section class="main-container">
-            <table id="house-data"></table>
-            <p class="total-info"></p>
+        <nav class="navbar sticky-top navbar-light navbar-expand-sm bg-light">
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#tgifNavbar"
+                aria-controls="tgifNavbar"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="tgifNavbar">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#"
+                            >Home <span class="sr-only">(current)</span></a
+                        >
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a
+                            class="nav-link dropdown-toggle"
+                            href="#"
+                            id="congressDropdown"
+                            data-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                            >Congress 113</a
+                        >
+                        <div
+                            class="dropdown-menu"
+                            aria-labelledby="congressDropdown"
+                        >
+                            <a class="dropdown-item" href="#">Senate</a>
+                            <a class="dropdown-item" href="#">House</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a
+                            class="nav-link dropdown-toggle"
+                            href="#"
+                            id="attendanceDropdown"
+                            data-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                            >Attendance</a
+                        >
+                        <div
+                            class="dropdown-menu"
+                            aria-labelledby="attendanceDropdown"
+                        >
+                            <a class="dropdown-item" href="#">Senate</a>
+                            <a class="dropdown-item" href="#">House</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a
+                            class="nav-link dropdown-toggle"
+                            href="#"
+                            id="partyDropdown"
+                            data-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                            >Party Loyalty</a
+                        >
+                        <div
+                            class="dropdown-menu"
+                            aria-labelledby="partyDropdown"
+                        >
+                            <a class="dropdown-item" href="#">Senate</a>
+                            <a class="dropdown-item" href="#">House</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <section class="container-fluid">
+            <div class="row">
+                <div class="col">
+                    <div class="table-responsive">
+                        <h2 id="top">House Data</h2>
+                        <table class="table table-sm table-striped table-hover">
+                            <thead id="house-head"></thead>
+                            <tbody id="house-body"></tbody>
+                        </table>
+                    </div>
+                    <p class="total-info"></p>
+                    <p>
+                        Source:
+                        <a
+                            href="https://projects.propublica.org/api-docs/congress-api/"
+                            target="_blank"
+                            rel="noopener"
+                            >ProPublica Congress API</a
+                        >
+                    </p>
+                </div>
+            </div>
         </section>
 
         <div class="top-button">
             <a href="#top">Top</a>
         </div>
 
-        <footer>
-            <span
-                >Site notice: This is a demo page! Contact:
-                <a href="https://sunyamare.ch/" target="_blank" rel="noopener"
-                    >sunyamare.ch
-                </a>
-            </span>
+        <footer class="container-fluid">
+            <div class="row">
+                <div class="col">
+                    <span
+                        >Site notice: This is a demo site! Contact:
+                        <a
+                            href="https://sunyamare.ch/"
+                            target="_blank"
+                            rel="noopener"
+                            >sunyamare.ch
+                        </a>
+                    </span>
+                </div>
+            </div>
         </footer>
 
         <script src="./js/membersHouse113Congress.js"></script>
         <script src="./js/loadHouseData.js"></script>
+        <script src="./js/jquery.min.js"></script>
+        <script src="./js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
