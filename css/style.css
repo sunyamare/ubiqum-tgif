@@ -6,10 +6,8 @@ body {
     font-size: 18px;
     margin: auto;
     max-width: 800px;
-    padding: 1em;
     text-align: left;
 }
-
 h1,
 h2,
 h3 {
@@ -17,50 +15,45 @@ h3 {
     color: #5f5f5f;
 }
 
+/* header image styling */
 .tgifLogo {
     max-width: 45px;
-    margin: 4px 7px 0 0;
 }
 .emailImage {
-    margin-right: 3px;
-    margin-bottom: 2px;
     opacity: 0.7;
+}
+
+/* navigation fine-tuning */
+a.nav-link {
+    color: #007bff !important;
+}
+li.nav-item.dropdown.show a,
+a.nav-link:hover {
+    color: #3e3d3d !important;
+}
+li.nav-item.dropdown.show,
+.nav-link:hover {
+    background-color: #eaeaea;
+}
+.navbar-light .navbar-toggler {
+    border: none;
 }
 
 .top-button a {
     position: fixed;
-    bottom: 6%;
-    right: 4%;
+    bottom: 5%;
+    right: 5%;
     z-index: 10;
-    background-color: #4f4f4f;
+    background-color: #424242;
     color: #fff;
     cursor: pointer;
-    padding: 8px 12px;
-    border-radius: 3px;
+    padding: 10px 16px;
+    border-radius: 2px;
     font-size: 1rem;
     text-decoration: none;
+    opacity: 0.7;
 }
 .top-button a:hover {
     text-decoration: underline;
     color: #fff;
-}
-
-footer {
-    bottom: 0;
-    position: fixed;
-    width: 100%;
-    max-width: inherit;
-    height: 30px;
-    background-color: #fff;
-}
-footer span {
-    font-size: 14px;
-    line-height: 2.2;
-    font-style: italic;
-}
-
-@media screen and (min-width: 500px) {
-    body {
-        text-align: justify;
-    }
 }
