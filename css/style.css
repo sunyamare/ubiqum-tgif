@@ -48,7 +48,6 @@ li.nav-item.dropdown.show,
 .table-responsive {
     overflow-x: scroll !important;
     height: 100%;
-    position: relative;
 }
 .table-responsive th {
     position: sticky;
