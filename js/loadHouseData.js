@@ -1,10 +1,10 @@
 // enter relevant data
 const tableHeadingArray = [
-    "Full Name",
+    "Name",
     "Party",
     "State",
-    "Seniority",
-    "Votes With Party"
+    "Years in Office",
+    "% Votes w/ Party"
 ];
 const dataToRetreive = data["results"][0]["members"];
 
