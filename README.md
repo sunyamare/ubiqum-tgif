@@ -1,6 +1,6 @@
 # ubiqum-tgif
 
-Ubiqum MERN bootcamp 2nd project: Get congressional data from an API and display it on a website.
+Ubiqum MERN bootcamp 2nd project.
 
 The task is to show API data from the ProPublica API on the US Congress.
 
