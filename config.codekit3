@@ -17,12 +17,6 @@
 		"oAP": "/build/.gitignore",
 		"oF": 0
 		},
-	"/.netlify": {
-		"ft": 65536,
-		"oA": 1,
-		"oAP": "/build/.netlify",
-		"oF": 0
-		},
 	"/build": {
 		"ft": 65536,
 		"oA": 1,
@@ -34,22 +28,6 @@
 		"oA": 1,
 		"oAP": "/build/instructions",
 		"oF": 0
-		},
-	"/keys/openStatesAPI.key": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 1,
-		"oAP": "/build/keys/openStatesAPI.key",
-		"oF": 1
-		},
-	"/keys/proPublicaAPI.key": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 1,
-		"oAP": "/build/keys/proPublicaAPI.key",
-		"oF": 1
 		},
 	"/LICENSE": {
 		"cB": 0,
@@ -264,7 +242,7 @@
 	"displayValueWasSetByUser": 0,
 	"iconImageName": "brackets-payne",
 	"iconImageWasSetByUser": 0,
-	"lastBuiltDate": 598443579.10506403
+	"lastBuiltDate": 598472252.42885303
 	},
 "projectSettings": {
 	"abortBuildOnError": 1,
