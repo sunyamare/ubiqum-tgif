@@ -1,6 +1,9 @@
 # macOS
 .DS_Store
 
+# codekit3 config
+config.codekit3
+
 # Key files
 keys/
 *.key
