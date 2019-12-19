@@ -235,6 +235,14 @@
 		"oF": 1,
 		"oO": 0,
 		"oS": 1
+		},
+	"/source/senate-data.html": {
+		"cB": 1,
+		"ft": 8192,
+		"hM": 1,
+		"oA": 0,
+		"oAP": "/build/senate-data.html",
+		"oF": 0
 		}
 	},
 "hooks": [
