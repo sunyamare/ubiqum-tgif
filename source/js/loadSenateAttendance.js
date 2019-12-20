@@ -13,21 +13,79 @@ console.log(generateValueArray("first_name"));
 
 // senate attendance stats object
 const senateAttendanceStats = {
-    // at a glance
-    numberOfReps: {
-        dem: 0,
-        rep: 0,
-        ind: 0,
-        total: 0
-    },
-    percentAttendance: {
-        dem: 0,
-        rep: 0,
-        ind: 0,
-        total: 0
-    }
-    // least engaged
-
-    // most engaged
+    atAGlance: [
+        {
+            party: "Democrats",
+            noOfReps: 0,
+            percentVotedWithParty: 0
+        },
+        {
+            party: "Republicans",
+            noOfReps: 0,
+            percentVotedWithParty: 0
+        },
+        {
+            party: "Independents",
+            noOfReps: 0,
+            percentVotedWithParty: 0
+        },
+        {
+            party: "Total",
+            noOfReps: 0,
+            percentVotedWithParty: 0
+        }
+    ],
+    leastEngaged: [
+        {
+            name: "",
+            url: "",
+            numberOfMissedVotes: 0,
+            percentMissedVotes: 0
+        },
+        {
+            name: "",
+            url: "",
+            numberOfMissedVotes: 0,
+            percentMissedVotes: 0
+        },
+        {
+            name: "",
+            url: "",
+            numberOfMissedVotes: 0,
+            percentMissedVotes: 0
+        },
+        {
+            name: "",
+            url: "",
+            numberOfMissedVotes: 0,
+            percentMissedVotes: 0
+        }
+    ],
+    mostEngaged: [
+        {
+            name: "",
+            url: "",
+            numberOfMissedVotes: 0,
+            percentMissedVotes: 0
+        },
+        {
+            name: "",
+            url: "",
+            numberOfMissedVotes: 0,
+            percentMissedVotes: 0
+        },
+        {
+            name: "",
+            url: "",
+            numberOfMissedVotes: 0,
+            percentMissedVotes: 0
+        },
+        {
+            name: "",
+            url: "",
+            numberOfMissedVotes: 0,
+            percentMissedVotes: 0
+        }
+    ]
 };
 console.log(senateAttendanceStats);
