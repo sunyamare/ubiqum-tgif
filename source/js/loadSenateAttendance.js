@@ -9,5 +9,25 @@ const generateValueArray = (value, unitOfMeasure = "") => {
     }
     return array;
 };
-
 console.log(generateValueArray("first_name"));
+
+// senate attendance stats object
+const senateAttendanceStats = {
+    // at a glance
+    numberOfReps: {
+        dem: 0,
+        rep: 0,
+        ind: 0,
+        total: 0
+    },
+    percentAttendance: {
+        dem: 0,
+        rep: 0,
+        ind: 0,
+        total: 0
+    }
+    // least engaged
+
+    // most engaged
+};
+console.log(senateAttendanceStats);
