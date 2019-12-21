@@ -3,13 +3,20 @@ const dataToRetreive = data["results"][0]["members"];
 
 // function to give me values and assign it to a variable
 const generateValueArray = (value, unitOfMeasure = "") => {
-    let array = [];
+    const array = [];
     for (let id in dataToRetreive) {
         array.push(dataToRetreive[id][value] + unitOfMeasure);
     }
     return array;
 };
-console.log(generateValueArray("first_name"));
+// console.log(generateValueArray("first_name"));
+
+// get numbers per party
+const partyArray = generateValueArray("party");
+const numberOfReps = partyArray.filter(party => party === "R").length;
+const numberOfDems = partyArray.filter(party => party === "D").length;
+const numberOfInds = partyArray.filter(party => party === "I").length;
+console.log(numberOfDems + ", " + numberOfReps + ", " + numberOfInds);
 
 // senate attendance stats object
 const senateAttendanceStats = {

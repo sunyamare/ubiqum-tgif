@@ -13,7 +13,7 @@ const masterArrayLength = dataToRetreive.length;
 
 // the function that generates arrays for each properties of interest
 const generateValueArray = (value, unitOfMeasure = "") => {
-    let array = [];
+    const array = [];
     for (let n = 0; n < masterArrayLength; n++) {
         array.push(dataToRetreive[n][value] + unitOfMeasure);
     }
@@ -49,8 +49,8 @@ const votesWithPartyPercentageArray = generateValueArray(
 );
 
 // existing table with IDs
-let thead = document.getElementById("senate-head");
-let tbody = document.getElementById("senate-body");
+let thead = document.getElementById("tableHead");
+let tbody = document.getElementById("tableBody");
 
 // generate table headings
 let tableHead = document.createElement("tr");
