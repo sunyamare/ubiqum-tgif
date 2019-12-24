@@ -8,37 +8,36 @@ const generateValueArray = (value, unitOfMeasure = "") => {
         array.push(dataToRetreive[id][value] + unitOfMeasure);
     }
     return array;
-};
-// console.log(generateValueArray("first_name"));
+}; // use: generateValueArray("first_name");
 
-// get numbers per party
+// party array for number of party members
 const partyArray = generateValueArray("party");
-const numberOfReps = partyArray.filter(party => party === "R").length;
-const numberOfDems = partyArray.filter(party => party === "D").length;
-const numberOfInds = partyArray.filter(party => party === "I").length;
-console.log(numberOfDems + ", " + numberOfReps + ", " + numberOfInds);
+// function to get number of party members per party
+const getMembersPerParty = whichParty => {
+    return partyArray.filter(party => party === whichParty).length;
+}; // use: getMembersPerParty("D")
 
 // senate attendance stats object
 const senateAttendanceStats = {
     atAGlance: [
         {
             party: "Democrats",
-            noOfReps: 0,
+            noOfReps: getMembersPerParty("D"),
             percentVotedWithParty: 0
         },
         {
             party: "Republicans",
-            noOfReps: 0,
+            noOfReps: getMembersPerParty("R"),
             percentVotedWithParty: 0
         },
         {
             party: "Independents",
-            noOfReps: 0,
+            noOfReps: getMembersPerParty("I"),
             percentVotedWithParty: 0
         },
         {
             party: "Total",
-            noOfReps: 0,
+            noOfReps: partyArray.length,
             percentVotedWithParty: 0
         }
     ],
