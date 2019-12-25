@@ -7,12 +7,15 @@ function round(value, decimals) {
 }
 
 // array per party
-const demArray = dataToRetreive.filter(item => item.party === "D");
-const repArray = dataToRetreive.filter(item => item.party === "R");
-const indArray = dataToRetreive.filter(item => item.party === "I");
+const demArray = dataToRetreive.filter(item => item["party"] === "D");
+const repArray = dataToRetreive.filter(item => item["party"] === "R");
+const indArray = dataToRetreive.filter(item => item["party"] === "I");
 
 // function to get votes with party
 const getVotesPerParty = array => {
+    if (array.length === 0) {
+        return "0%";
+    }
     var resultArray = [];
     for (let id in array) {
         resultArray.push(array[id]["votes_with_party_pct"]);
@@ -45,4 +48,20 @@ const atAGlance = [
         percentVotedWithParty: getVotesPerParty(dataToRetreive)
     }
 ];
-console.log(atAGlance);
+
+// existing table with ID
+let tbody = document.getElementById("atAGlance-body");
+
+// generate table contents
+for (let id in atAGlance) {
+    let tableContents = document.createElement("tr");
+    const tableRowContents = ["party", "noOfReps", "percentVotedWithParty"];
+    for (let i = 0; i < tableRowContents.length; i++) {
+        let newTh = document.createElement("td");
+        newTh.appendChild(
+            document.createTextNode(atAGlance[id][tableRowContents[i]])
+        );
+        tableContents.appendChild(newTh);
+    }
+    tbody.appendChild(tableContents);
+}

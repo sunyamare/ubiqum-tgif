@@ -117,6 +117,14 @@
 		"oF": 3,
 		"oS": 3
 		},
+	"/source/house-attendance.html": {
+		"cB": 1,
+		"ft": 8192,
+		"hM": 1,
+		"oA": 0,
+		"oAP": "/build/house-attendance.html",
+		"oF": 0
+		},
 	"/source/house-data.html": {
 		"cB": 1,
 		"ft": 8192,
