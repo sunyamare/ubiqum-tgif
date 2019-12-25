@@ -133,37 +133,82 @@
 
         <section class="container-fluid">
             <div class="row">
-                <div class="col p-0">
-                    <h2>Senate Attendance</h2>
-                    <p></p>
-                </div>
-            </div>
+                <div class="col-sm-6 pr-sm-2 pl-sm-2">
+                    <h2>Attendance</h2>
+                    <p>
+                        The Constitution specifies that a majority of members
+                        constitutes a quorum to do business in each house.
+                        Representatives and senators rarely force the presence
+                        of a quorum by demanding quorum calls; thus, in most
+                        cases, debates continue even if a majority is not
+                        present.
+                    </p>
 
-            <div class="row">
-                <div class="col p-0">
+                    <p>
+                        The Senate uses roll-call votes; a clerk calls out the
+                        names of all the senators, each senator stating "aye" or
+                        "no" when his or her name is announced. The House
+                        reserves roll-call votes for the most formal matters, as
+                        a roll-call of all 435 representatives takes quite some
+                        time; normally, members vote by electronic device. In
+                        the case of a tie, the motion in question fails. In the
+                        Senate, the Vice President may (if present) cast the
+                        tiebreaking vote.
+                    </p>
+                </div>
+                <div class="col-sm-6 text-sm-right pr-sm-2 pl-sm-2">
+                    <h2>Senate at a glance</h2>
                     <div class="table-responsive">
-                        <table class="table table-sm table-striped table-hover">
-                            <thead id="senate-head" class="text-dark"></thead>
-                            <tbody id="senate-body"></tbody>
+                        <table
+                            class="table table-borderless table-sm table-striped table-hover text-center"
+                        >
+                            <thead class="text-dark">
+                                <tr>
+                                    <th>Party</th>
+                                    <th>No. of Reps</th>
+                                    <th>% Voted with Prty</th>
+                                </tr>
+                            </thead>
+                            <tbody id="atAGlance-body"></tbody>
                         </table>
                     </div>
                 </div>
             </div>
 
+            <hr />
+
             <div class="row">
-                <div class="col-sm p-0">
-                    <p class="total-info"></p>
-                </div>
-                <div class="col-sm p-0 text-sm-right">
-                    <p>
-                        Source:
-                        <a
-                            href="https://projects.propublica.org/api-docs/congress-api/"
-                            target="_blank"
-                            rel="noopener"
-                            >ProPublica Congress API</a
+                <div class="col-sm-6 pr-sm-2 pl-sm-2">
+                    <h2>Least Engaged (Bottom 10% Attendance)</h2>
+                    <div class="table-responsive">
+                        <table
+                            class="table table-borderless table-sm table-striped table-hover text-center"
                         >
-                    </p>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Number of Missed Votes</th>
+                                    <th>% Missed</th>
+                                </tr>
+                            </thead>
+                            <tbody id="leastEngaged-body"></tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-sm-6 pr-sm-2 pl-sm-2">
+                    <h2>Most Engaged (Top 10% Attendance)</h2>
+                    <table
+                        class="table table-borderless table-sm table-striped table-hover text-center"
+                    >
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Number of Missed Votes</th>
+                                <th>% Missed</th>
+                            </tr>
+                        </thead>
+                        <tbody id="mostEngaged-body"></tbody id="leastEngaged-body">
+                    </table>
                 </div>
             </div>
         </section>
@@ -198,6 +243,6 @@
         <script src="./js/jquery.min.js"></script>
         <script src="./js/bootstrap.bundle.min.js"></script>
         <script src="./js/membersSenate113Congress.js"></script>
-        <script src="./js/loadSenateAttendance.js"></script>
+        <script src="./js/loadAtAGlance.js"></script>
     </body>
 </html>

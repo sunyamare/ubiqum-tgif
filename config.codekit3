@@ -176,6 +176,28 @@
 		"sC": 3,
 		"tS": 0
 		},
+	"/source/js/loadAtAGlance.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/build/js/loadAtAGlance.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"/source/js/loadAttendance.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/build/js/loadAttendance.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
 	"/source/js/loadCongressData.js": {
 		"bF": 0,
 		"ft": 64,
@@ -184,17 +206,6 @@
 		"oA": 0,
 		"oAP": "/build/js/loadCongressData.js",
 		"oF": 1,
-		"sC": 3,
-		"tS": 0
-		},
-	"/source/js/loadSenateAttendance.js": {
-		"bF": 0,
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "/build/js/loadSenateAttendance.js",
-		"oF": 0,
 		"sC": 3,
 		"tS": 0
 		},
