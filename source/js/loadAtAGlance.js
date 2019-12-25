@@ -7,9 +7,12 @@ function round(value, decimals) {
 }
 
 // array per party
-const demArray = dataToRetreive.filter(item => item["party"] === "D");
-const repArray = dataToRetreive.filter(item => item["party"] === "R");
-const indArray = dataToRetreive.filter(item => item["party"] === "I");
+const arrayPerParty = party => {
+    return dataToRetreive.filter(item => item["party"] === party);
+};
+const demArray = arrayPerParty("D");
+const repArray = arrayPerParty("R");
+const indArray = arrayPerParty("I");
 
 // function to get votes with party
 const getVotesPerParty = array => {
