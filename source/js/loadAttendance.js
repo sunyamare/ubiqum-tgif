@@ -78,7 +78,6 @@ const extractFullName = (object, id) => {
         );
     }
 };
-console.log(extractFullName(mostEngagedArray, 0));
 
 // create object for data
 const attendance = {
@@ -103,15 +102,14 @@ const fillDataObject = (dataSource, dataDestination) => {
 fillDataObject(mostEngagedArray, "mostEngaged");
 fillDataObject(leastEngagedArray, "leastEngaged");
 
-console.log(attendance);
-
 // populate least engaged table
 pupulateTable(
     "leastEngaged-body",
     attendance.leastEngaged,
     "name",
     "numberOfMissedVotes",
-    "percentMissedVotes"
+    "percentMissedVotes",
+    "url"
 );
 
 // populate least engaged table
@@ -120,5 +118,6 @@ pupulateTable(
     attendance.mostEngaged,
     "name",
     "numberOfMissedVotes",
-    "percentMissedVotes"
+    "percentMissedVotes",
+    "url"
 );

@@ -53,20 +53,43 @@ const atAGlance = [
 ];
 
 // function to pupulate table
-const pupulateTable = (tBodyName, objectArray, header1, header2, header3) => {
+const pupulateTable = (
+    tBodyName,
+    objectArray,
+    header1,
+    header2,
+    header3,
+    url = ""
+) => {
     // existing table with ID
     let tbody = document.getElementById(tBodyName);
 
     // generate table contents
     for (let id in objectArray) {
         let tableContents = document.createElement("tr");
-        const tableRowContents = [header1, header2, header3];
-        for (let i = 0; i < tableRowContents.length; i++) {
-            let newTh = document.createElement("td");
-            newTh.appendChild(
-                document.createTextNode(objectArray[id][tableRowContents[i]])
-            );
-            tableContents.appendChild(newTh);
+        const tableRowContents = [url, header1, header2, header3];
+        for (let i = 1; i < tableRowContents.length; i++) {
+            const newRow = () => {
+                let newTd = document.createElement("td");
+                newTd.appendChild(
+                    document.createTextNode(
+                        objectArray[id][tableRowContents[i]]
+                    )
+                );
+                return newTd;
+            };
+            if (i < 2 && url !== "") {
+                let newTd = document.createElement("td");
+                newTd.innerHTML = `<a href="${
+                    objectArray[id][url]
+                }" target="_blank" rel="noopener">${
+                    objectArray[id][tableRowContents[i]]
+                }</a>`;
+                tableContents.appendChild(newTd);
+            } else {
+                const newTd = newRow();
+                tableContents.appendChild(newTd);
+            }
         }
         tbody.appendChild(tableContents);
     }
