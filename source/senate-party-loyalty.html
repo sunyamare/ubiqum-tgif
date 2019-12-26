@@ -11,10 +11,10 @@
         />
         <meta
             name="keywords"
-            content="TGIF, Transparent Government in Fact, US, House, Congress, Politics"
+            content="TGIF, Transparent Government in Fact, US, Senate, Congress, Politics"
         />
         <meta name="robots" content="index, follow" />
-        <title>TGIF - House Attendance</title>
+        <title>TGIF - Senate Party Loyalty</title>
         <link rel="stylesheet" href="./css/bootstrap.min.css" />
         <link rel="stylesheet" href="./css/style.css" />
     </head>
@@ -89,7 +89,7 @@
                             >
                         </div>
                     </li>
-                    <li class="nav-item active dropdown">
+                    <li class="nav-item dropdown">
                         <a
                             class="nav-link p-3"
                             href="#"
@@ -108,12 +108,14 @@
                                 href="./senate-attendance.html"
                                 >Senate</a
                             >
-                            <a class="dropdown-item active p-1" href="#"
+                            <a
+                                class="dropdown-item p-1"
+                                href="house-attendance.html"
                                 >House</a
                             >
                         </div>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item active dropdown">
                         <a
                             class="nav-link p-3"
                             href="#"
@@ -127,9 +129,7 @@
                             class="dropdown-menu p-1"
                             aria-labelledby="partyDropdown"
                         >
-                            <a
-                                class="dropdown-item p-1"
-                                href="./senate-party-loyalty.html"
+                            <a class="dropdown-item p-1 active" href="#"
                                 >Senate</a
                             >
                             <a
@@ -146,30 +146,17 @@
         <section class="container-fluid">
             <div class="row">
                 <div class="col-sm-6 pr-sm-2 pl-sm-2">
-                    <h2>Attendance</h2>
+                    <h2>Party Loyalty</h2>
                     <p>
-                        The Constitution specifies that a majority of members
-                        constitutes a quorum to do business in each house.
-                        Representatives and senators rarely force the presence
-                        of a quorum by demanding quorum calls; thus, in most
-                        cases, debates continue even if a majority is not
-                        present.
-                    </p>
-
-                    <p>
-                        The Senate uses roll-call votes; a clerk calls out the
-                        names of all the senators, each senator stating "aye" or
-                        "no" when his or her name is announced. The House
-                        reserves roll-call votes for the most formal matters, as
-                        a roll-call of all 435 representatives takes quite some
-                        time; normally, members vote by electronic device. In
-                        the case of a tie, the motion in question fails. In the
-                        Senate, the Vice President may (if present) cast the
-                        tiebreaking vote.
+                        Those who consider themselves to be strong partisans,
+                        strong Democrats and strong Republicans respectively,
+                        tend to be the most faithful in voting for their party's
+                        nominee for office and legislation that backs their
+                        party's agenda.
                     </p>
                 </div>
                 <div class="col-sm-6 text-sm-right pr-sm-2 pl-sm-2">
-                    <h2>House at a glance</h2>
+                    <h2>Senate at a glance</h2>
                     <div class="table-responsive">
                         <table
                             class="table table-borderless table-sm table-striped table-hover text-center"
@@ -178,7 +165,7 @@
                                 <tr>
                                     <th>Party</th>
                                     <th>No. of Reps</th>
-                                    <th>% Voted with Prty</th>
+                                    <th>% Voted with Party</th>
                                 </tr>
                             </thead>
                             <tbody id="atAGlance-body"></tbody>
@@ -191,7 +178,7 @@
 
             <div class="row">
                 <div class="col-sm-6 pr-sm-2 pl-sm-2">
-                    <h2>Least Engaged (Bottom 10% Attendance)</h2>
+                    <h2>Least Loyal (Bottom 10% of Party)</h2>
                     <div class="table-responsive">
                         <table
                             class="table table-borderless table-sm table-striped table-hover text-center"
@@ -199,27 +186,27 @@
                             <thead>
                                 <tr>
                                     <th>Name</th>
-                                    <th>Number of Missed Votes</th>
-                                    <th>% Missed</th>
+                                    <th>Number Party Votes</th>
+                                    <th>% Party Votes</th>
                                 </tr>
                             </thead>
-                            <tbody id="leastEngaged-body"></tbody>
+                            <tbody id="leastLoyal-body"></tbody>
                         </table>
                     </div>
                 </div>
                 <div class="col-sm-6 pr-sm-2 pl-sm-2">
-                    <h2>Most Engaged (Top 10% Attendance)</h2>
+                    <h2>Most Loyal (Top 10% of Party)</h2>
                     <table
                         class="table table-borderless table-sm table-striped table-hover text-center"
                     >
                         <thead>
                             <tr>
                                 <th>Name</th>
-                                <th>Number of Missed Votes</th>
-                                <th>% Missed</th>
+                                <th>Number Party Votes</th>
+                                <th>% Party Votes</th>
                             </tr>
                         </thead>
-                        <tbody id="mostEngaged-body"></tbody>
+                        <tbody id="mostLoyal-body"></tbody>
                     </table>
                 </div>
             </div>
@@ -254,8 +241,8 @@
 
         <script src="./js/jquery.min.js"></script>
         <script src="./js/bootstrap.bundle.min.js"></script>
-        <script src="./js/membersHouse113Congress.js"></script>
+        <script src="./js/membersSenate113Congress.js"></script>
         <script src="./js/loadAtAGlance.js"></script>
-        <script src="./js/loadAttendance.js"></script>
+        <script src="./js/loadPartyLoyalty.js"></script>
     </body>
 </html>

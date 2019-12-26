@@ -133,6 +133,14 @@
 		"oAP": "/build/house-data.html",
 		"oF": 1
 		},
+	"/source/house-party-loyalty.html": {
+		"cB": 1,
+		"ft": 8192,
+		"hM": 1,
+		"oA": 0,
+		"oAP": "/build/house-party-loyalty.html",
+		"oF": 0
+		},
 	"/source/img/mail.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -217,6 +225,17 @@
 		"sC": 3,
 		"tS": 0
 		},
+	"/source/js/loadPartyLoyalty.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/build/js/loadPartyLoyalty.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
 	"/source/js/membersHouse113Congress.js": {
 		"bF": 0,
 		"ft": 64,
@@ -269,6 +288,14 @@
 		"hM": 1,
 		"oA": 0,
 		"oAP": "/build/senate-data.html",
+		"oF": 0
+		},
+	"/source/senate-party-loyalty.html": {
+		"cB": 1,
+		"ft": 8192,
+		"hM": 1,
+		"oA": 0,
+		"oAP": "/build/senate-party-loyalty.html",
 		"oF": 0
 		}
 	},
