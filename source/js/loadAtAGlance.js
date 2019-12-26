@@ -52,19 +52,29 @@ const atAGlance = [
     }
 ];
 
-// existing table with ID
-let tbody = document.getElementById("atAGlance-body");
+// function to pupulate table
+const pupulateTable = (tBodyName, objectArray, header1, header2, header3) => {
+    // existing table with ID
+    let tbody = document.getElementById(tBodyName);
 
-// generate table contents
-for (let id in atAGlance) {
-    let tableContents = document.createElement("tr");
-    const tableRowContents = ["party", "noOfReps", "percentVotedWithParty"];
-    for (let i = 0; i < tableRowContents.length; i++) {
-        let newTh = document.createElement("td");
-        newTh.appendChild(
-            document.createTextNode(atAGlance[id][tableRowContents[i]])
-        );
-        tableContents.appendChild(newTh);
+    // generate table contents
+    for (let id in objectArray) {
+        let tableContents = document.createElement("tr");
+        const tableRowContents = [header1, header2, header3];
+        for (let i = 0; i < tableRowContents.length; i++) {
+            let newTh = document.createElement("td");
+            newTh.appendChild(
+                document.createTextNode(objectArray[id][tableRowContents[i]])
+            );
+            tableContents.appendChild(newTh);
+        }
+        tbody.appendChild(tableContents);
     }
-    tbody.appendChild(tableContents);
-}
+};
+pupulateTable(
+    "atAGlance-body",
+    atAGlance,
+    "party",
+    "noOfReps",
+    "percentVotedWithParty"
+);

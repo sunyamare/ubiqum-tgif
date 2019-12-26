@@ -1,14 +1,4 @@
-/*
-// data source to retrieve
-const dataToRetreive = data["results"][0]["members"];
-
-// actually accurate JS rounding function - credits: https://www.jacklmoore.com/notes/rounding-in-javascript/
-function round(value, decimals) {
-    return Number(Math.round(value + "e" + decimals) + "e-" + decimals);
-}
-*/
-
-// extracts only voting info and if no parameter is sent, will sort ascendingly
+// extracts only relevant info and if no parameter is sent, sort ascendingly
 const extractAndSortArray = (asc = null) => {
     return dataToRetreive
         .map(
@@ -37,29 +27,42 @@ const extractAndSortArray = (asc = null) => {
         });
 };
 
-// create ascending missed votes array
-const ascendingMissedVotesArray = extractAndSortArray();
-// get 10% (rounded up to 0 decimals)
-const tenPercentRounded = round(dataToRetreive.length * 0.1, 0);
-// create array with bottom 10% (or rounded-up %)
-const missedvotesTableArray = [];
-for (let i = 0; i < tenPercentRounded; i++) {
-    missedvotesTableArray.push(ascendingMissedVotesArray[i]);
-}
+// function to create engagement arrays
+const createEngagementArray = leastOrMost => {
+    let missedVotesArray = [];
+    if (leastOrMost === "most") {
+        missedVotesArray = extractAndSortArray();
+    } else {
+        missedVotesArray = extractAndSortArray("desc");
+    }
 
-// add additional elements to the array if next up values are the same as last position in array
-const maxNumberOfAdditionalRows = 20; // for security reasons (preventing an endless loop)
-for (
-    let i = 0;
-    i < maxNumberOfAdditionalRows &&
-    missedvotesTableArray[missedvotesTableArray.length - 1]["missed_votes"] ===
-        ascendingMissedVotesArray[missedvotesTableArray.length]["missed_votes"];
-    i++
-) {
-    missedvotesTableArray.push(
-        ascendingMissedVotesArray[missedvotesTableArray.length]
-    );
-}
+    // get 10% (round to 0 decimals)
+    const tenPercentRounded = round(dataToRetreive.length * 0.1, 0);
+    // create array with the amount of values calculated above
+    const mostEngagedTableArray = [];
+    for (let i = 0; i < tenPercentRounded; i++) {
+        mostEngagedTableArray.push(missedVotesArray[i]);
+    }
+    // add additional elements to the array if next up values are the same as last position in array
+    const maxNumberOfAdditionalRows = 20; // for security reasons (preventing an endless loop)
+    for (
+        let i = 0;
+        i < maxNumberOfAdditionalRows &&
+        mostEngagedTableArray[mostEngagedTableArray.length - 1][
+            "missed_votes"
+        ] === missedVotesArray[mostEngagedTableArray.length]["missed_votes"];
+        i++
+    ) {
+        mostEngagedTableArray.push(
+            missedVotesArray[mostEngagedTableArray.length]
+        );
+    }
+    return mostEngagedTableArray;
+};
+// most engaged array:
+const mostEngagedArray = createEngagementArray("most");
+// most engaged array:
+const leastEngagedArray = createEngagementArray("least");
 
 // function to extract full_name from array
 const extractFullName = (object, id) => {
@@ -75,59 +78,47 @@ const extractFullName = (object, id) => {
         );
     }
 };
-console.log(extractFullName(ascendingMissedVotesArray, 0));
+console.log(extractFullName(mostEngagedArray, 0));
 
+// create object for data
 const attendance = {
-    leastEngaged: [
-        {
-            name: "",
-            url: "",
-            numberOfMissedVotes: 0,
-            percentMissedVotes: 0
-        },
-        {
-            name: "",
-            url: "",
-            numberOfMissedVotes: 0,
-            percentMissedVotes: 0
-        },
-        {
-            name: "",
-            url: "",
-            numberOfMissedVotes: 0,
-            percentMissedVotes: 0
-        },
-        {
-            name: "",
-            url: "",
-            numberOfMissedVotes: 0,
-            percentMissedVotes: 0
-        }
-    ],
-    mostEngaged: [
-        {
-            name: "",
-            url: "",
-            numberOfMissedVotes: 0,
-            percentMissedVotes: 0
-        },
-        {
-            name: "",
-            url: "",
-            numberOfMissedVotes: 0,
-            percentMissedVotes: 0
-        },
-        {
-            name: "",
-            url: "",
-            numberOfMissedVotes: 0,
-            percentMissedVotes: 0
-        },
-        {
-            name: "",
-            url: "",
-            numberOfMissedVotes: 0,
-            percentMissedVotes: 0
-        }
-    ]
+    leastEngaged: [],
+    mostEngaged: []
 };
+
+// function to fill data object above
+const fillDataObject = (dataSource, dataDestination) => {
+    for (let id in dataSource) {
+        // object template
+        const objectTemplate = {
+            name: extractFullName(dataSource, id),
+            url: dataSource[id].url,
+            numberOfMissedVotes: dataSource[id]["missed_votes"],
+            percentMissedVotes: round(dataSource[id].missed_votes_pct, 1) + "%"
+        };
+        attendance[dataDestination].push(objectTemplate);
+    }
+};
+// fill data object for least, and most engaged:
+fillDataObject(mostEngagedArray, "mostEngaged");
+fillDataObject(leastEngagedArray, "leastEngaged");
+
+console.log(attendance);
+
+// populate least engaged table
+pupulateTable(
+    "leastEngaged-body",
+    attendance.leastEngaged,
+    "name",
+    "numberOfMissedVotes",
+    "percentMissedVotes"
+);
+
+// populate least engaged table
+pupulateTable(
+    "mostEngaged-body",
+    attendance.mostEngaged,
+    "name",
+    "numberOfMissedVotes",
+    "percentMissedVotes"
+);
