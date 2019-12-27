@@ -81,3 +81,24 @@ for (let i = 0; i < masterArrayLength; i++) {
 let totalInfo = document.querySelector(".total-info");
 let totalInfoText = document.createTextNode("Total rows: " + masterArrayLength);
 totalInfo.appendChild(totalInfoText);
+
+// checkboxes
+// addEventListener: target.addEventListener(type, listener[, options]);
+// event type for checkbox: CheckboxStateChange
+// event type dropdown (<select>): change
+// listener: object receiving a notification or function to be called
+const buttonElement = document.getElementById("top");
+buttonElement.addEventListener("click", function(event) {
+    alert("Element clicked through function!");
+});
+
+const anotherElement = document.getElementById("top");
+anotherElement.addEventListener("click", eventHandler);
+function eventHandler(event) {
+    if (event.type === "click") {
+        /* handle a full screen toggle */
+        alert("#2");
+    } /* fullscreenerror */ else {
+        /* handle a full screen toggle error */
+    }
+}
