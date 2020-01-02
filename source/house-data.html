@@ -172,10 +172,43 @@
             </div>
 
             <div class="row">
-                <div class="col pl-0">
-                    <span class="align-middle">Filter by Party: </span>
+                <div class="col-8 pl-0">
+                    <span class="align-middle pr-1">Filter by Party: </span>
+                    <div class="align-middle form-check form-check-inline">
+                        <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="republicanCB"
+                            value="republicanCB"
+                        />
+                        <label class="form-check-label" for="republicanCB"
+                            >Republican</label
+                        >
+                    </div>
+                    <div class="align-middle form-check form-check-inline">
+                        <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="democratCB"
+                            value="democratCB"
+                        />
+                        <label class="form-check-label" for="democratCB"
+                            >Democrat</label
+                        >
+                    </div>
+                    <div class="align-middle form-check form-check-inline">
+                        <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="independentCB"
+                            value="independentCB"
+                        />
+                        <label class="form-check-label" for="independentCB"
+                            >Independent</label
+                        >
+                    </div>
                 </div>
-                <div class="col pl-0 pr-sm-0 text-right">
+                <div class="col-4 pl-0 pr-sm-0 text-right">
                     <span class="align-middle">Filter by State: </span>
                     <div class="btn-group">
                         <button
@@ -233,7 +266,7 @@
             </div>
         </section>
 
-        <div class="top-button">
+        <div id="top-button" class="top-button">
             <a href="#top">Top</a>
         </div>
 
@@ -264,5 +297,23 @@
         <script src="./js/bootstrap.bundle.min.js"></script>
         <script src="./js/membersHouse113Congress.js"></script>
         <script src="./js/loadCongressData.js"></script>
+        <script>
+            //Get the button:
+            const mybutton = document.getElementById("top-button");
+            // When the user scrolls down 20px from the top of the document, show the button
+            window.onscroll = function() {
+                scrollFunction();
+            };
+            function scrollFunction() {
+                if (
+                    document.body.scrollTop > 40 ||
+                    document.documentElement.scrollTop > 40
+                ) {
+                    mybutton.style.display = "block";
+                } else {
+                    mybutton.style.display = "none";
+                }
+            }
+        </script>
     </body>
 </html>
