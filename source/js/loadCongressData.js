@@ -40,12 +40,6 @@ thead.appendChild(tableHead);
 
 /* repeatable code when filtered: */
 const populateTable = data => {
-    /* (taking care of that in the filtration process)
-    // in case no filter is chosen, show all data
-    if (data.length === 0) {
-        data = congressData;
-    }*/
-
     // sort data using the first name
     data = data.sort((a, b) => {
         return b.seniority - a.seniority;
@@ -149,13 +143,15 @@ $(".dropdown-menu").on("click", "button", function() {
 
 // generate states array
 const generateStatesArray = (data = congressData) => {
-    let stateArray = [];
+    let stateDropdownArray = [];
     for (let i in data) {
-        stateArray.push(data[i]["state"]);
+        stateDropdownArray.push(data[i]["state"]);
     }
-    stateArray.unshift("All");
-    stateArray = stateArray.filter((item, i, ar) => ar.indexOf(item) === i);
-    return stateArray;
+    stateDropdownArray = stateDropdownArray.filter(
+        (item, i, ar) => ar.indexOf(item) === i
+    );
+    stateDropdownArray.sort().unshift("All");
+    return stateDropdownArray;
 };
 
 // generate dropdown with existing states to filter
