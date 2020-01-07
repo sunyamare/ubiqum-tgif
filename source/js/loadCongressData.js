@@ -40,10 +40,12 @@ thead.appendChild(tableHead);
 
 /* repeatable code when filtered: */
 const populateTable = data => {
+    /* (taking care of that in the filtration process)
     // in case no filter is chosen, show all data
     if (data.length === 0) {
         data = congressData;
-    }
+    }*/
+
     // sort data using the first name
     data = data.sort((a, b) => {
         return b.seniority - a.seniority;
@@ -132,26 +134,84 @@ Array.from(checkboxSelection).forEach(function(element) {
     element.addEventListener("click", () => {
         evaluateCheckbox();
         // regenerate tbody with checkbox filters
-        populateTable(filterByParty(checkboxValues));
+        populateTable(filterDataSet());
     });
 });
-
-// function to filter congressData
-const filterByParty = () => {
-    const doFilterAction = item => {
-        if (checkboxValues.includes(item.party)) {
-            return true;
-        }
-        return false;
-    };
-    let congressDataPartyFiltered = congressData.filter(doFilterAction);
-    return congressDataPartyFiltered;
-};
 
 // Get state dropdown values (jQuery)
 let dropdownValue = "All";
 $(".dropdown-menu").on("click", "button", function() {
     $(".btn:first-child").text($(this).text());
     dropdownValue = $(this).val();
+    populateTable(filterDataSet());
     console.log(dropdownValue);
 });
+
+// generate states array
+const generateStatesArray = (data = congressData) => {
+    let stateArray = [];
+    for (let i in data) {
+        stateArray.push(data[i]["state"]);
+    }
+    stateArray.unshift("All");
+    stateArray = stateArray.filter((item, i, ar) => ar.indexOf(item) === i);
+    return stateArray;
+};
+
+// generate dropdown with existing states to filter
+const generateStatesDropdown = (statesArray = ["All"]) => {
+    let dropdownDiv = document.getElementById("statesDropdownItems");
+    dropdownDiv.innerHTML = "";
+    for (let i = 0; i < statesArray.length; i++) {
+        let item = document.createElement("span");
+        item.innerHTML = `<button class="dropdown-item" type="button" value="${statesArray[i]}">${statesArray[i]}</button>`;
+        dropdownDiv.appendChild(item);
+    }
+};
+generateStatesDropdown(generateStatesArray());
+
+// function to filter congressData
+const filterDataSet = () => {
+    // filter by party
+    const filterParty = item => {
+        if (checkboxValues.includes(item.party)) {
+            return true;
+        }
+        return false;
+    };
+    let congressDataPartyFiltered = [];
+    // in case no checkbox filter is selected, don't filter
+    if (checkboxValues.length === 0) {
+        congressDataPartyFiltered = congressData;
+    } else {
+        congressDataPartyFiltered = congressData.filter(filterParty);
+    }
+
+    // create array with states
+    generateStatesDropdown(generateStatesArray(congressDataPartyFiltered));
+
+    /*const uniqueStates = generateStatesArray().filter(
+        (item, i, ar) => ar.indexOf(item) === i
+    );
+    generateStatesDropdown(uniqueStates);*/
+
+    // filter by state
+    const filterState = item => {
+        if (dropdownValue === item.state) {
+            return true;
+        }
+        return false;
+    };
+    // in case All is selected, don't filter
+    let congressDataStateFiltered = [];
+    if (dropdownValue === "All") {
+        congressDataStateFiltered = congressData;
+    } else {
+        congressDataStateFiltered = congressData.filter(filterState);
+    }
+    // get the intersection of the two result arrays
+    const result = congressDataPartyFiltered.filter(value =>
+        congressDataStateFiltered.includes(value)
+    );
+    return result; // later: result
+};
