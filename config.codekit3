@@ -170,6 +170,17 @@
 		"oAP": "/build/index.html",
 		"oF": 0
 		},
+	"/source/js/backToTop.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/build/js/backToTop.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
 	"/source/js/bootstrap.bundle.min.js": {
 		"bF": 0,
 		"ft": 64,
@@ -318,7 +329,7 @@
 	"displayValueWasSetByUser": 0,
 	"iconImageName": "brackets-payne",
 	"iconImageWasSetByUser": 0,
-	"lastBuiltDate": 599078473.46480203
+	"lastBuiltDate": 600106673.41757202
 	},
 "projectSettings": {
 	"abortBuildOnError": 1,
