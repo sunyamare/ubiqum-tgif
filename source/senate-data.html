@@ -165,6 +165,92 @@
             </div>
 
             <div class="row">
+                <div class="col-8 pl-0">
+                    <span class="align-middle pr-1">Filter by Party: </span>
+                    <div class="align-middle form-check form-check-inline">
+                        <input
+                            name="filterByParty"
+                            class="form-check-input"
+                            type="checkbox"
+                            id="republicanCB"
+                            value="Republicans"
+                        />
+                        <label class="form-check-label" for="republicanCB"
+                            >Republicans</label
+                        >
+                    </div>
+                    <div class="align-middle form-check form-check-inline">
+                        <input
+                            name="filterByParty"
+                            class="form-check-input"
+                            type="checkbox"
+                            id="democratCB"
+                            value="Democrats"
+                        />
+                        <label class="form-check-label" for="democratCB"
+                            >Democrats</label
+                        >
+                    </div>
+                    <div class="align-middle form-check form-check-inline">
+                        <input
+                            name="filterByParty"
+                            class="form-check-input"
+                            type="checkbox"
+                            id="independentCB"
+                            value="Independents"
+                        />
+                        <label class="form-check-label" for="independentCB"
+                            >Independents</label
+                        >
+                    </div>
+                </div>
+                <div class="col-4 pl-0 pr-sm-0 text-right">
+                    <span class="align-middle">Filter by State: </span>
+                    <div class="btn-group">
+                        <button
+                            type="button"
+                            class="btn btn-secondary dropdown-toggle"
+                            data-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                        >
+                            All
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <button
+                                class="dropdown-item"
+                                type="button"
+                                value="All"
+                            >
+                                All
+                            </button>
+                            <button
+                                class="dropdown-item"
+                                type="button"
+                                value="Action"
+                            >
+                                Action
+                            </button>
+                            <button
+                                class="dropdown-item"
+                                type="button"
+                                value="Another action"
+                            >
+                                Another action
+                            </button>
+                            <button
+                                class="dropdown-item"
+                                type="button"
+                                value="Something else"
+                            >
+                                Something else
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
                 <div class="col p-0">
                     <div class="table-responsive">
                         <table
@@ -226,5 +312,6 @@
         <script src="./js/bootstrap.bundle.min.js"></script>
         <script src="./js/membersSenate113Congress.js"></script>
         <script src="./js/loadCongressData.js"></script>
+        <script src="./js/backToTop.js"></script>
     </body>
 </html>

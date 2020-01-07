@@ -102,3 +102,23 @@ function eventHandler(event) {
         /* handle a full screen toggle error */
     }
 }
+
+// Get party checkbox values
+let checkboxValues = [];
+const evaluateCheckbox = () => {
+    checkboxValues = Array.from(
+        document.querySelectorAll("input[name=filterByParty]:checked")
+    ).map(item => item.value);
+};
+const checkboxSelection = document.getElementsByClassName("form-check-input");
+Array.from(checkboxSelection).forEach(function(element) {
+    element.addEventListener("click", () => {
+        evaluateCheckbox();
+    });
+});
+// Get state dropdown values (jQuery)
+let dropdownValue = "All";
+$(".dropdown-menu").on("click", "button", function() {
+    $(".btn:first-child").text($(this).text());
+    dropdownValue = $(this).val();
+});
