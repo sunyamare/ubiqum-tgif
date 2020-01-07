@@ -82,27 +82,6 @@ let totalInfo = document.querySelector(".total-info");
 let totalInfoText = document.createTextNode("Total rows: " + masterArrayLength);
 totalInfo.appendChild(totalInfoText);
 
-// checkboxes
-// addEventListener: target.addEventListener(type, listener[, options]);
-// event type for checkbox: CheckboxStateChange
-// event type dropdown (<select>): change
-// listener: object receiving a notification or function to be called
-const buttonElement = document.getElementById("top");
-buttonElement.addEventListener("click", function(event) {
-    alert("Element clicked through function!");
-});
-
-const anotherElement = document.getElementById("top");
-anotherElement.addEventListener("click", eventHandler);
-function eventHandler(event) {
-    if (event.type === "click") {
-        /* handle a full screen toggle */
-        alert("#2");
-    } /* fullscreenerror */ else {
-        /* handle a full screen toggle error */
-    }
-}
-
 // Get party checkbox values
 let checkboxValues = [];
 const evaluateCheckbox = () => {
@@ -114,6 +93,7 @@ const checkboxSelection = document.getElementsByClassName("form-check-input");
 Array.from(checkboxSelection).forEach(function(element) {
     element.addEventListener("click", () => {
         evaluateCheckbox();
+        console.log(checkboxValues);
     });
 });
 // Get state dropdown values (jQuery)
@@ -121,4 +101,5 @@ let dropdownValue = "All";
 $(".dropdown-menu").on("click", "button", function() {
     $(".btn:first-child").text($(this).text());
     dropdownValue = $(this).val();
+    console.log(dropdownValue);
 });
