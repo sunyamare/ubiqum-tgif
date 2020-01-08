@@ -4,6 +4,8 @@
 # Key files
 keys/
 *.key
+# temp and sensitive
+test.html 
 
 # Logs
 logs
