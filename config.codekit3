@@ -13,9 +13,9 @@
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/build/.gitignore",
-		"oF": 0
+		"oF": 1
 		},
 	"/.netlify": {
 		"ft": 65536,
@@ -35,29 +35,19 @@
 		"oAP": "/build/instructions",
 		"oF": 0
 		},
-	"/keys/openStatesAPI.key": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
+	"/keys": {
+		"ft": 65536,
 		"oA": 1,
-		"oAP": "/build/keys/openStatesAPI.key",
-		"oF": 1
-		},
-	"/keys/proPublicaAPI.key": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 1,
-		"oAP": "/build/keys/proPublicaAPI.key",
-		"oF": 1
+		"oAP": "/build/keys",
+		"oF": 0
 		},
 	"/LICENSE": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/build/LICENSE",
-		"oF": 0
+		"oF": 1
 		},
 	"/netlify.toml": {
 		"cB": 0,
@@ -66,17 +56,6 @@
 		"oA": 1,
 		"oAP": "/build/netlify.toml",
 		"oF": 1
-		},
-	"/notes.js": {
-		"bF": 0,
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 1,
-		"oAP": "/build/notes.js",
-		"oF": 1,
-		"sC": 3,
-		"tS": 0
 		},
 	"/README.md": {
 		"cB": 0,
@@ -321,9 +300,9 @@
 		"cB": 1,
 		"ft": 8192,
 		"hM": 1,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/build/test.html",
-		"oF": 0
+		"oF": 1
 		}
 	},
 "hooks": [
@@ -345,7 +324,7 @@
 	"displayValueWasSetByUser": 0,
 	"iconImageName": "brackets-payne",
 	"iconImageWasSetByUser": 0,
-	"lastBuiltDate": 600260058.14508295
+	"lastBuiltDate": 600266310.69401705
 	},
 "projectSettings": {
 	"abortBuildOnError": 1,
@@ -780,7 +759,7 @@
 			"flagValue": -1
 			}
 		},
-	"environmentVariablesString": "NODE_ENV:::production",
+	"environmentVariablesString": "",
 	"esLintConfigFileHandlingType": 0,
 	"esLintECMAVersion": 7,
 	"esLintEnvironmentsMask": 1,
@@ -2419,7 +2398,7 @@
 	"rollupExternals": "",
 	"rollupReplacements": "process.env.NODE_ENV:::$NODE_ENV,,,ENVIRONMENT:::$NODE_ENV",
 	"rollupTreeshakingEnabled": 1,
-	"skippedFoldersString": "/storage/framework/sessions, node_modules, .netlify, /.netlify, _logs, logs, log, /instructions, .idea, _cache, cache",
+	"skippedFoldersString": "/storage/framework/sessions,node_modules,.netlify,/.netlify,_logs,logs,log,/instructions,.idea,_cache,cache,keys",
 	"sourceFolderName": "source",
 	"susyVersion": 3,
 	"tsAllowSyntheticDefaultImports": 0,

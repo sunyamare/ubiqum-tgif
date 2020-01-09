@@ -1,7 +1,8 @@
 # example netlify.toml
 [build]
   command = "" # no build command
-  publish = "build"
+  publish = "./build"
+  functions = "./functions"
 
   ## Uncomment to use this redirect for Single Page Applications like create-react-app. 
   ## Not needed for static site generators.
@@ -15,6 +16,7 @@
   [dev] 
     command = "" # Command to start your dev server
   #  port = 5500 # Port that the dev server will be listening on
-    publish = "source" # Folder with the static content for _redirect file
-  
+    publish = "./source" # Folder with the static content for _redirect file
+    functions = "./functions"
+
   ## more info on configuring this file: https://www.netlify.com/docs/netlify-toml-reference/ 
