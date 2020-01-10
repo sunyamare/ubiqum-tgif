@@ -11,9 +11,8 @@ build
 keys
 *.key
 
-# temp and sensitive
+# sensitive
 getAPIData.html 
-test.html
 
 # Logs
 logs

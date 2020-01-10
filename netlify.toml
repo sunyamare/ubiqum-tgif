@@ -1,22 +1,18 @@
-# example netlify.toml
 [build]
-  command = "npm run build" # no build command
+  base = "./"
+  command = "npm run build" 
   publish = "./build"
-  functions = "./.netlify/functions/"
+  functions = "./functions-build/"
 
-  ## Uncomment to use this redirect for Single Page Applications like create-react-app. 
-  ## Not needed for static site generators.
-  #[[redirects]]
-  #  from = "/*"
-  #  to = "/index.html"
-  #  status = 200
+[dev] 
+  # command = "npm run build && python -m SimpleHTTPServer 8080" # unfortunately doesn't work
+  # command = "npm run build"
   
-  ## (optional) Settings for Netlify Dev
-  ## https://github.com/netlify/cli/blob/master/docs/netlify-dev.md#project-detection
-  [dev] 
-    command = "npm run build" # Command to start your dev server
-  #  port = 5500 # Port that the dev server will be listening on
-    publish = "./source" # Folder with the static content for _redirect file
-    functions = "./.netlify/functions/"
+  # build netlify functions: npm run build
+  publish = "./build" # Folder with the static content for _redirect file
+  functionsPort = 23456
+#  port = 9000
 
-  ## more info on configuring this file: https://www.netlify.com/docs/netlify-toml-reference/ 
+# command = "python -m SimpleHTTPServer 9000"
+# find apps using port 8080: sudo lsof -i:8080
+# kill those apps: kill <process ID>

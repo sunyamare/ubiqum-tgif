@@ -29,6 +29,18 @@
 		"oAP": "/build/build",
 		"oF": 0
 		},
+	"/functions": {
+		"ft": 65536,
+		"oA": 1,
+		"oAP": "/build/functions",
+		"oF": 0
+		},
+	"/functions-build": {
+		"ft": 65536,
+		"oA": 1,
+		"oAP": "/build/functions-build",
+		"oF": 0
+		},
 	"/instructions": {
 		"ft": 65536,
 		"oA": 1,
@@ -59,9 +71,9 @@
 		},
 	"/node_modules": {
 		"ft": 65536,
-		"oA": 2,
+		"oA": 1,
 		"oAP": "/build/node_modules",
-		"oF": 0
+		"oF": 1
 		},
 	"/package-lock.json": {
 		"ft": 524288,
@@ -322,7 +334,7 @@
 		"cB": 1,
 		"ft": 8192,
 		"hM": 1,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "/build/test.html",
 		"oF": 1
 		}
@@ -346,7 +358,7 @@
 	"displayValueWasSetByUser": 0,
 	"iconImageName": "brackets-payne",
 	"iconImageWasSetByUser": 0,
-	"lastBuiltDate": 600266310.69401705
+	"lastBuiltDate": 600352985.59360099
 	},
 "projectSettings": {
 	"abortBuildOnError": 1,
@@ -2420,7 +2432,7 @@
 	"rollupExternals": "",
 	"rollupReplacements": "process.env.NODE_ENV:::$NODE_ENV,,,ENVIRONMENT:::$NODE_ENV",
 	"rollupTreeshakingEnabled": 1,
-	"skippedFoldersString": "/storage/framework/sessions,node_modules,.netlify,/.netlify,_logs,logs,log,/instructions,.idea,_cache,cache,keys",
+	"skippedFoldersString": "/storage/framework/sessions,node_modules,.netlify,/.netlify,_logs,logs,log,keys,/instructions,.idea,functions-build,functions,_cache,cache,node_modules",
 	"sourceFolderName": "source",
 	"susyVersion": 3,
 	"tsAllowSyntheticDefaultImports": 0,

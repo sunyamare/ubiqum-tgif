@@ -4,11 +4,11 @@
     "main": "index.js",
     "author": "github.com/sunyamare",
     "license": "GPL-3.0",
-    "devDependencies": {
-        "netlify-lambda": "^1.4.3"
+    "dependencies": {
+        "netlify-lambda": "^1.6.3"
     },
     "scripts": {
-        "dev": "netlify-lambda serve functions",
-        "build": "netlify-lambda build functions"
+        "build": "netlify-lambda build functions",
+        "serve": "netlify-lambda build build"
     }
 }
