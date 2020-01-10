@@ -57,6 +57,28 @@
 		"oAP": "/build/netlify.toml",
 		"oF": 1
 		},
+	"/node_modules": {
+		"ft": 65536,
+		"oA": 2,
+		"oAP": "/build/node_modules",
+		"oF": 0
+		},
+	"/package-lock.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/build/package-lock.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"/package.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/build/package.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
 	"/README.md": {
 		"cB": 0,
 		"cS": 0,
@@ -95,17 +117,6 @@
 		"oAP": "/build/css/style.css",
 		"oF": 3,
 		"oS": 3
-		},
-	"/source/functions/hello.js": {
-		"bF": 0,
-		"ft": 64,
-		"ma": 0,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "/build/functions/hello.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
 		},
 	"/source/getAPIData.html": {
 		"cB": 0,

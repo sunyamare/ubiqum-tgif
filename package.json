@@ -1,0 +1,14 @@
+{
+    "name": "ubiqum-tgif",
+    "version": "1.0.0",
+    "main": "index.js",
+    "author": "github.com/sunyamare",
+    "license": "GPL-3.0",
+    "devDependencies": {
+        "netlify-lambda": "^1.4.3"
+    },
+    "scripts": {
+        "dev": "netlify-lambda serve functions",
+        "build": "netlify-lambda build functions"
+    }
+}

@@ -1,8 +1,8 @@
 # example netlify.toml
 [build]
-  command = "" # no build command
+  command = "npm run build" # no build command
   publish = "./build"
-  functions = "./build/functions"
+  functions = "./.netlify/functions/"
 
   ## Uncomment to use this redirect for Single Page Applications like create-react-app. 
   ## Not needed for static site generators.
@@ -14,9 +14,9 @@
   ## (optional) Settings for Netlify Dev
   ## https://github.com/netlify/cli/blob/master/docs/netlify-dev.md#project-detection
   [dev] 
-    command = "" # Command to start your dev server
+    command = "npm run build" # Command to start your dev server
   #  port = 5500 # Port that the dev server will be listening on
     publish = "./source" # Folder with the static content for _redirect file
-    functions = "./source/functions"
+    functions = "./.netlify/functions/"
 
   ## more info on configuring this file: https://www.netlify.com/docs/netlify-toml-reference/ 
