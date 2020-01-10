@@ -8,7 +8,6 @@
         "netlify-lambda": "^1.6.3"
     },
     "scripts": {
-        "build": "netlify-lambda build functions",
-        "serve": "netlify-lambda build build"
+        "build": "netlify-lambda build ./functions"
     }
 }

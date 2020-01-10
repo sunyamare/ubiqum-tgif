@@ -6,12 +6,11 @@
 
 [dev] 
   # command = "npm run build && python -m SimpleHTTPServer 8080" # unfortunately doesn't work
-  # command = "npm run build"
-  
-  # build netlify functions: npm run build
   publish = "./build" # Folder with the static content for _redirect file
   functionsPort = 23456
-#  port = 9000
+# port = 9000
+
+# build netlify functions: npm run build
 
 # command = "python -m SimpleHTTPServer 9000"
 # find apps using port 8080: sudo lsof -i:8080
