@@ -1,12 +1,14 @@
 [build]
   base = "./"
   command = "npm run build" 
-  publish = "./build"
+  publish = "./source"
   functions = "./functions_build/"
 
 [dev] 
   # command = "npm run build && python -m SimpleHTTPServer 8080" # unfortunately doesn't work
-  publish = "./build" # Folder with the static content for _redirect file
+  command = "npm run build" 
+  publish = "./source" # Folder with the static content for _redirect file
+  functions = "./functions_build/"
   functionsPort = 23456
 # port = 9000
 
