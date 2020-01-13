@@ -4,28 +4,12 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>test env var</title>
+        <title>test fetch and assign data variable</title>
     </head>
     <body>
+        <script src="./js/doApiCall.js"></script>
         <script>
-            const url = "/.netlify/functions/apicall?c=house";
-            async function apiCall() {
-                console.log("fetching data ...");
-                try {
-                    const response = await fetch(url);
-                    // this code will NOT run until 'response' has been assigned
-                    // and then the program will PAUSE until it gets a reponse
-                    const data = await response.json();
-                    // this code only runs when data is assigned.
-                    return data;
-                } catch (err) {
-                    console.log(err);
-                }
-            }
-            let data = {};
-            apiCall().then(
-                result => (console.log("done fetching"), (data = result))
-            );
+            doApiCall("house");
         </script>
     </body>
 </html>
