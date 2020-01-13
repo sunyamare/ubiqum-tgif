@@ -8,16 +8,24 @@
     </head>
     <body>
         <script>
-            console.log("hola");
-
-            const Http = new XMLHttpRequest();
-            const url = "/.netlify/functions/apitest?c=house";
-            Http.open("GET", url);
-            Http.send();
-
-            Http.onreadystatechange = () => {
-                console.log(Http.responseText);
-            };
+            const url = "/.netlify/functions/apicall?c=house";
+            async function apiCall() {
+                console.log("fetching data ...");
+                try {
+                    const response = await fetch(url);
+                    // this code will NOT run until 'response' has been assigned
+                    // and then the program will PAUSE until it gets a reponse
+                    const data = await response.json();
+                    // this code only runs when data is assigned.
+                    return data;
+                } catch (err) {
+                    console.log(err);
+                }
+            }
+            let data = {};
+            apiCall().then(
+                result => (console.log("done fetching"), (data = result))
+            );
         </script>
     </body>
 </html>

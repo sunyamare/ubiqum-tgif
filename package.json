@@ -5,8 +5,8 @@
     "author": "github.com/sunyamare",
     "license": "GPL-3.0",
     "dependencies": {
-        "netlify-lambda": "^1.6.3",
-        "node-fetch": "^2.6.0"
+        "axios": "^0.19.1",
+        "netlify-lambda": "^1.6.3"
     },
     "scripts": {
         "build": "netlify-lambda build ./functions"
