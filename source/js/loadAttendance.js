@@ -1,4 +1,5 @@
 const loadAttendance = () => {
+    console.log("attendance");
     // extracts only relevant info and if no parameter is sent, sort ascendingly
     const extractAndSortArray = (asc = null) => {
         return dataToRetreive

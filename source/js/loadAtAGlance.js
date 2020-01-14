@@ -117,5 +117,5 @@ const loadAtAGlance = () => {
         "percentVotedWithParty"
     );
 
-    loadAttendance();
+    typeof script === "undefined" ? loadAttendance() : partyLoyalty();
 };
