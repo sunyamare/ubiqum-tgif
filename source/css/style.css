@@ -21,6 +21,9 @@ h1 {
 h2 {
     font-size: 1.5rem;
 }
+a {
+    color: #003f84;
+}
 
 /* header image styling */
 .tgifLogo {
