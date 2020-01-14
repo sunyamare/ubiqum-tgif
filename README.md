@@ -16,3 +16,7 @@ The latest stable version is published here: https://peaceful-lichterman-430740.
 6. run "netlify dev" to test the site locally, this should start a dev server, it should also automatically include the environmental variable you created on Netlify, and it will build the lambda function that fetches api data
 7. run "netlify deploy" to make a test deploy
 8. if all looks well, run "netlify deploy -p" to make a production deploy
+
+## Google's Lighthouse Audit
+
+![Lighthouse Audit Result](https://github.com/sunyamare/ubiqum-tgif/blob/master/misc/lighthouse-tgif.png)
