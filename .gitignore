@@ -7,10 +7,6 @@ functions_build
 # deploy directory
 build
 
-# Key files
-keys
-*.key
-
 # sensitive
 getAPIData.html 
 
