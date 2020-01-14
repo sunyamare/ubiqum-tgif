@@ -183,6 +183,7 @@
                             </thead>
                             <tbody id="atAGlance-body"></tbody>
                         </table>
+                        <div class="loader"></div>
                     </div>
                 </div>
             </div>
@@ -205,6 +206,7 @@
                             </thead>
                             <tbody id="leastEngaged-body"></tbody>
                         </table>
+                        <div class="loader"></div>
                     </div>
                 </div>
                 <div class="col-sm-6 pr-sm-2 pl-sm-2">
@@ -221,6 +223,7 @@
                         </thead>
                         <tbody id="mostEngaged-body"></tbody>
                     </table>
+                    <div class="loader"></div>
                 </div>
             </div>
         </section>
@@ -254,7 +257,10 @@
 
         <script src="./js/jquery.min.js"></script>
         <script src="./js/bootstrap.bundle.min.js"></script>
-        <script src="./js/membersSenate113Congress.js"></script>
+        <script>
+            const chamber = "senate";
+        </script>
+        <script src="./js/apiCall.js"></script>
         <script src="./js/loadAtAGlance.js"></script>
         <script src="./js/loadAttendance.js"></script>
         <script src="./js/backToTop.js"></script>

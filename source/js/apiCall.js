@@ -10,8 +10,10 @@ async function apiCall(chamber) {
     }
 }
 let data = {};
-const doApiCall = chamber => {
-    apiCall(chamber).then(
-        result => (console.log("done fetching"), (data = result))
-    );
+
+const removeLoader = () => {
+    const loaderElements = Array.from(document.querySelectorAll(".loader"));
+    for (let element of loaderElements) {
+        element.classList.remove("loader");
+    }
 };
