@@ -1,260 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <meta name="author" content="Thomas - sunyamare.ch" />
-        <meta
-            name="description"
-            content="TGIF - Transparent Government in Fact"
-        />
-        <meta
-            name="keywords"
-            content="TGIF, Transparent Government in Fact, US, Senate, Congress, Politics"
-        />
-        <meta name="robots" content="index, follow" />
-        <title>TGIF - Senate Party Loyalty</title>
-        <link
-            rel="prefetch"
-            href="./css/bootstrap.min.css"
-            as="style"
-            onload="this.rel = 'stylesheet'"
-        />
-        <link rel="stylesheet" href="./css/style.css" />
-    </head>
-    <body>
-        <header class="container-fluid mt-2 p-0">
-            <div class="row">
-                <div class="col">
-                    <img
-                        src="./img/tgif_logo.png"
-                        alt="TGIF Logo"
-                        class="tgifLogo float-left mt-1 mr-2"
-                    />
-                    <h1 id="top">TGIF</h1>
-                </div>
-                <div class="col">
-                    <div class="email float-right pt-1">
-                        <a href="mailto:info@tgif.net"
-                            ><img
-                                src="./img/mail.svg"
-                                alt="mail icon"
-                                class="emailImage mr-1 align-center"
-                            />info@tgif.net</a
-                        >
-                    </div>
-                </div>
-            </div>
-        </header>
-
-        <nav
-            class="navbar mt-2 mb-4 navbar-light navbar-expand-sm bg-light border border-secondary card-footer p-0"
-        >
-            <button
-                class="navbar-toggler"
-                type="button"
-                data-toggle="collapse"
-                data-target="#tgifNavbar"
-                aria-controls="tgifNavbar"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-            >
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="tgifNavbar">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link p-3" href="./index.html">Home</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a
-                            class="nav-link p-3"
-                            href="#"
-                            id="congressDropdown"
-                            data-toggle="dropdown"
-                            aria-haspopup="true"
-                            aria-expanded="false"
-                            >Congress 113</a
-                        >
-                        <div
-                            class="dropdown-menu p-1"
-                            aria-labelledby="congressDropdown"
-                        >
-                            <a
-                                class="dropdown-item p-1"
-                                href="./senate-data.html"
-                                >Senate</a
-                            >
-                            <a
-                                class="dropdown-item p-1"
-                                href="./house-data.html"
-                                >House</a
-                            >
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a
-                            class="nav-link p-3"
-                            href="#"
-                            id="attendanceDropdown"
-                            data-toggle="dropdown"
-                            aria-haspopup="true"
-                            aria-expanded="false"
-                            >Attendance</a
-                        >
-                        <div
-                            class="dropdown-menu p-1"
-                            aria-labelledby="attendanceDropdown"
-                        >
-                            <a
-                                class="dropdown-item p-1"
-                                href="./senate-attendance.html"
-                                >Senate</a
-                            >
-                            <a
-                                class="dropdown-item p-1"
-                                href="house-attendance.html"
-                                >House</a
-                            >
-                        </div>
-                    </li>
-                    <li class="nav-item active dropdown">
-                        <a
-                            class="nav-link p-3"
-                            href="#"
-                            id="partyDropdown"
-                            data-toggle="dropdown"
-                            aria-haspopup="true"
-                            aria-expanded="false"
-                            >Party Loyalty</a
-                        >
-                        <div
-                            class="dropdown-menu p-1"
-                            aria-labelledby="partyDropdown"
-                        >
-                            <a class="dropdown-item p-1 active" href="#"
-                                >Senate</a
-                            >
-                            <a
-                                class="dropdown-item p-1"
-                                href="./house-party-loyalty.html"
-                                >House</a
-                            >
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-
-        <section class="container-fluid">
-            <div class="row">
-                <div class="col-sm-6 pr-sm-2 pl-sm-2">
-                    <h2>Party Loyalty</h2>
-                    <p>
-                        Those who consider themselves to be strong partisans,
-                        strong Democrats and strong Republicans respectively,
-                        tend to be the most faithful in voting for their party's
-                        nominee for office and legislation that backs their
-                        party's agenda.
-                    </p>
-                </div>
-                <div class="col-sm-6 text-sm-right pr-sm-2 pl-sm-2">
-                    <h2>Senate at a glance</h2>
-                    <div class="table-responsive">
-                        <table
-                            class="table table-borderless table-sm table-striped table-hover text-center"
-                        >
-                            <thead class="text-dark">
-                                <tr>
-                                    <th>Party</th>
-                                    <th>No. of Reps</th>
-                                    <th>% Voted with Party</th>
-                                </tr>
-                            </thead>
-                            <tbody id="atAGlance-body"></tbody>
-                        </table>
-                        <div class="loader"></div>
-                    </div>
-                </div>
-            </div>
-
-            <hr />
-
-            <div class="row">
-                <div class="col-sm-6 pr-sm-2 pl-sm-2">
-                    <h2>Least Loyal (Bottom 10% of Party)</h2>
-                    <div class="table-responsive">
-                        <table
-                            class="table table-borderless table-sm table-striped table-hover text-center"
-                        >
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Number Party Votes</th>
-                                    <th>% Party Votes</th>
-                                </tr>
-                            </thead>
-                            <tbody id="leastLoyal-body"></tbody>
-                        </table>
-                        <div class="loader"></div>
-                    </div>
-                </div>
-                <div class="col-sm-6 pr-sm-2 pl-sm-2">
-                    <h2>Most Loyal (Top 10% of Party)</h2>
-                    <table
-                        class="table table-borderless table-sm table-striped table-hover text-center"
-                    >
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Number Party Votes</th>
-                                <th>% Party Votes</th>
-                            </tr>
-                        </thead>
-                        <tbody id="mostLoyal-body"></tbody>
-                    </table>
-                    <div class="loader"></div>
-                </div>
-            </div>
-        </section>
-
-        <div id="top-button" class="top-button">
-            <a href="#top">Top</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="author" content="Thomas - sunyamare.ch" />
+    <meta name="description" content="TGIF - Transparent Government in Fact" />
+    <meta
+      name="keywords"
+      content="TGIF, Transparent Government in Fact, US, Senate, Congress, Politics"
+    />
+    <meta name="robots" content="index, follow" />
+    <title>TGIF - Senate Party Loyalty</title>
+    <link
+      rel="prefetch"
+      href="./css/bootstrap.min.css"
+      as="style"
+      onload="this.rel = 'stylesheet'"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header class="container-fluid mt-2 p-0">
+      <div class="row">
+        <div class="col">
+          <img
+            src="./img/tgif_logo.png"
+            alt="TGIF Logo"
+            class="tgifLogo float-left mt-1 mr-2"
+          />
+          <h1 id="top">TGIF</h1>
         </div>
+        <div class="col">
+          <div class="email float-right pt-1">
+            <a href="mailto:info@tgif.net"
+              ><img
+                src="./img/mail.svg"
+                alt="mail icon"
+                class="emailImage mr-1 align-center"
+              />info@tgif.net</a
+            >
+          </div>
+        </div>
+      </div>
+    </header>
 
-        <footer class="container-fluid">
-            <div class="row">
-                <div class="col py-3 border border-secondary card-footer">
-                    <p class="text-center m-0">
-                        © 2016 TGIF | All Rights Reserved
-                    </p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <p class="m-2 text-center">
-                        Site notice: This is a demo site! Contact:
-                        <a
-                            href="https://sunyamare.ch/"
-                            target="_blank"
-                            rel="noopener"
-                            >sunyamare.ch
-                        </a>
-                    </p>
-                </div>
-            </div>
-        </footer>
+    <nav
+      class="navbar mt-2 mb-4 navbar-light navbar-expand-sm bg-light border border-secondary card-footer p-0"
+    >
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#tgifNavbar"
+        aria-controls="tgifNavbar"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-        <script src="./js/jquery.min.js"></script>
-        <script src="./js/bootstrap.bundle.min.js"></script>
-        <script>
-            const chamber = "senate";
-            const script = "partyLoyalty";
-        </script>
-        <script src="./js/common.js"></script>
-        <script src="./js/loadAtAGlance.js"></script>
-        <script src="./js/loadPartyLoyalty.js"></script>
-    </body>
+      <div class="collapse navbar-collapse" id="tgifNavbar">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link p-3" href="./index.html">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link p-3"
+              href="#"
+              id="congressDropdown"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+              >Congress 113</a
+            >
+            <div class="dropdown-menu p-1" aria-labelledby="congressDropdown">
+              <a class="dropdown-item p-1" href="./senate-data.html">Senate</a>
+              <a class="dropdown-item p-1" href="./house-data.html">House</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link p-3"
+              href="#"
+              id="attendanceDropdown"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+              >Attendance</a
+            >
+            <div class="dropdown-menu p-1" aria-labelledby="attendanceDropdown">
+              <a class="dropdown-item p-1" href="./senate-attendance.html"
+                >Senate</a
+              >
+              <a class="dropdown-item p-1" href="house-attendance.html"
+                >House</a
+              >
+            </div>
+          </li>
+          <li class="nav-item active dropdown">
+            <a
+              class="nav-link p-3"
+              href="#"
+              id="partyDropdown"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+              >Party Loyalty</a
+            >
+            <div class="dropdown-menu p-1" aria-labelledby="partyDropdown">
+              <a class="dropdown-item p-1 active" href="#">Senate</a>
+              <a class="dropdown-item p-1" href="./house-party-loyalty.html"
+                >House</a
+              >
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <section class="container-fluid">
+      <div class="row">
+        <div class="col-sm-6 pr-sm-2 pl-sm-2">
+          <h2>Party Loyalty</h2>
+          <p>
+            Those who consider themselves to be strong partisans, strong
+            Democrats and strong Republicans respectively, tend to be the most
+            faithful in voting for their party's nominee for office and
+            legislation that backs their party's agenda.
+          </p>
+        </div>
+        <div class="col-sm-6 text-sm-right pr-sm-2 pl-sm-2">
+          <h2>Senate at a glance</h2>
+          <div class="table-responsive">
+            <table
+              class="table table-borderless table-sm table-striped table-hover text-center"
+            >
+              <thead class="text-dark">
+                <tr>
+                  <th>Party</th>
+                  <th>No. of Reps</th>
+                  <th>% Voted with Party</th>
+                </tr>
+              </thead>
+              <tbody id="atAGlance-body"></tbody>
+            </table>
+            <div class="loader"></div>
+          </div>
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="row">
+        <div class="col-sm-6 pr-sm-2 pl-sm-2">
+          <h2>Least Loyal (Bottom 10% of Party)</h2>
+          <div class="table-responsive">
+            <table
+              class="table table-borderless table-sm table-striped table-hover text-center"
+            >
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Number Party Votes</th>
+                  <th>% Party Votes</th>
+                </tr>
+              </thead>
+              <tbody id="leastLoyal-body"></tbody>
+            </table>
+            <div class="loader"></div>
+          </div>
+        </div>
+        <div class="col-sm-6 pr-sm-2 pl-sm-2">
+          <h2>Most Loyal (Top 10% of Party)</h2>
+          <table
+            class="table table-borderless table-sm table-striped table-hover text-center"
+          >
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Number Party Votes</th>
+                <th>% Party Votes</th>
+              </tr>
+            </thead>
+            <tbody id="mostLoyal-body"></tbody>
+          </table>
+          <div class="loader"></div>
+        </div>
+      </div>
+    </section>
+
+    <div id="top-button" class="top-button">
+      <a href="#top">Top</a>
+    </div>
+
+    <footer class="container-fluid">
+      <div class="row">
+        <div class="col py-3 border border-secondary card-footer">
+          <p class="text-center m-0">
+            © 2016 TGIF | All Rights Reserved
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <p class="m-2 text-center">
+            Site notice: This is a demo site! Contact:
+            <a href="https://sunyamare.ch/" target="_blank" rel="noopener"
+              >sunyamare.ch
+            </a>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script>
+      const chamber = "senate";
+      const isAttendance = false;
+    </script>
+    <script src="./js/common.js"></script>
+    <script src="./js/loadAtAGlance.js"></script>
+    <script src="./js/loadPartyLoyalty.js"></script>
+  </body>
 </html>
